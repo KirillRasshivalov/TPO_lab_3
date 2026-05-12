@@ -82,7 +82,8 @@ public class LoginPage extends BasePage {
         By avatarLocator = By.xpath("//img[contains(@class,'gravatar')]");
         clickSafely(avatarLocator);
 
-        By logoutBtnLocator = By.xpath("//div[contains(@class,'popover')]//button[contains(text(),'Log Out')]");
+        By logoutBtnLocator = By.xpath("//button[contains(text(),'Log Out')" +
+                "or contains(text(),'Выйти')]");
         clickSafely(logoutBtnLocator);
     }
 }
