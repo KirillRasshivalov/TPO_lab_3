@@ -16,8 +16,12 @@ public class SearchPage extends BasePage {
         System.out.println("Поиск на странице: " + currentUrl);
         String xPath = "//*[@id=\"primary\"]/div/div/div/div/div/div[3]/div/div/div[2]/div[1]" +
                 "/div/div[1]/div/div/div[1]/span[contains(text(), '" + keyword + "')]";
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
-        return true;
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     @Override
