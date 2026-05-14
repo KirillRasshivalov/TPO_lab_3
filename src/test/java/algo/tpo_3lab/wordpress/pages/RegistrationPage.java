@@ -6,10 +6,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class RegistrationPage extends BasePage {
 
-    private By continueEnterEm = By.xpath("//*[@id=\"wpcom\"]/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/button[4]");
-    private By emailInput = By.xpath("//*[@id=\"signup-email\"]");
-    private By dashboard = By.xpath("//*[@id=\"wpcom\"]/div/div[2]/div[2]/div[1]/div/h1");
-    private By continueEm = By.xpath("//*[@id=\"wpcom\"]/div/div[2]/div[2]/div[2]/div/div[2]/div/div/div/form/div/button[1]");
+    private By continueEnterEm = By.xpath("//button[contains(@class, 'components-button " +
+            "a8c-components-wp-button social-buttons__button is-next-40px-default-size is-secondary')]//span[text()='Чтобы продолжить, введите адрес эл. почты']");
+    private By emailInput = By.xpath("//input[@type='email']");
+    private By dashboard = By.xpath("//button[contains(@class, 'components-button domain-search-controls__submit is-primary')]");
+    private By continueEm = By.xpath("//button[contains(@class, 'components-button signup-form__submit is-next-40px-default-size is-primary')]");
 
     public void open() {
         driver.get("https://wordpress.com/setup/onboarding/ru");
