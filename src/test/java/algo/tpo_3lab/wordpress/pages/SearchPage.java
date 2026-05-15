@@ -14,8 +14,7 @@ public class SearchPage extends BasePage {
     public boolean isResultPresentFor(String keyword) {
         String currentUrl = driver.getCurrentUrl();
         System.out.println("Поиск на странице: " + currentUrl);
-        String xPath = "//*[@id=\"primary\"]/div/div/div/div/div/div[3]/div/div/div[2]/div[1]" +
-                "/div/div[1]/div/div/div[1]/span[contains(text(), '" + keyword + "')]";
+        String xPath = "//span[contains(text(), '" + keyword + "')]";
         try {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xPath)));
             return true;

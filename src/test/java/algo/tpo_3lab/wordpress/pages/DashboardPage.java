@@ -14,7 +14,7 @@ public class DashboardPage extends BasePage {
 
     private By helpMenuInside = By.xpath("//button[contains(@class, 'help-center-contact-pa')]");
 
-    private By themesMenuItem = By.xpath("//*[@id=\"secondary\"]/div/div/ul/li[3]/a/span");
+    private By themesMenuItem = By.xpath("//span[contains(text(), 'Темы')]");
 
     public DashboardPage(WebDriver driver) {
         super(driver);
